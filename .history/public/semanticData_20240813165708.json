@@ -1,0 +1,52 @@
+{
+  "isSuccess": true,
+  "code": 200,
+  "message": "성공입니다.",
+  "data": [
+    {
+      "name": "원/달러",
+      "imageUrl": "/image/america_flag.png",
+      "faceUrl": "/image/smile.png",
+      "semantic": "긍정적",
+      "persent": 81,
+      "positive": 80.9,
+      "nagative": 19.1
+    },
+    {
+      "name": "원/유로",
+      "imageUrl": "/image/europe_flag.png",
+      "faceUrl": "/image/neutral.png",
+      "semantic": "중립적",
+      "persent": 50,
+      "positive": 50.0,
+      "nagative": 50.0
+    },
+    {
+      "name": "원/엔",
+      "imageUrl": "/image/japan_flag.png",
+      "faceUrl": "/image/sad.png",
+      "semantic": "부정적",
+      "persent": 35,
+      "positive": 35.0,
+      "nagative": 65.0
+    },
+    {
+      "name": "원/파운드",
+      "imageUrl": "/image/uk_flag.png",
+      "faceUrl": "/image/smile.png",
+      "semantic": "긍정적",
+      "persent": 73,
+      "positive": 73.2,
+      "nagative": 26.8
+    },
+    {
+      "name": "원/위안",
+      "imageUrl": "/image/china_flag.png",
+      "faceUrl": "/image/very_sad.png",
+      "semantic": "매우부정적",
+      "persent": 20,
+      "positive": 20.0,
+      "nagative": 80.0
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "isSuccess": true,
+  "code": 200,
+  "message": "성공입니다.",
+  "data": [
+    {
+      "name": "원/달러",
+      "imageUrl": "/image/america_flag.png",
+      "currentPrice": 1300,
+      "date": "2024.05.28",
+      "increase": 23.6,
+      "chartData": [
+        { "name": "Page A", "uv": 4000, "pv": 2400, "amt": 2400 },
+        { "name": "Page B", "uv": 3000, "pv": 1398, "amt": 2210 },
+        { "name": "Page C", "uv": 2000, "pv": 9800, "amt": 2290 },
+        { "name": "Page D", "uv": 2780, "pv": 3908, "amt": 2000 },
+        { "name": "Page E", "uv": 1890, "pv": 4800, "amt": 2181 },
+        { "name": "Page F", "uv": 2390, "pv": 3800, "amt": 2500 },
+        { "name": "Page G", "uv": 3490, "pv": 4300, "amt": 2100 }
+      ]
+    },
+    {
+      "name": "원/유로",
+      "imageUrl": "/image/europe_flag.png",
+      "currentPrice": 1500,
+      "date": "2024.05.29",
+      "increase": -5.5,
+      "chartData": [
+        { "name": "Page A", "uv": 4100, "pv": 2500, "amt": 2500 },
+        { "name": "Page B", "uv": 3100, "pv": 1400, "amt": 2220 },
+        { "name": "Page C", "uv": 2100, "pv": 9900, "amt": 2300 },
+        { "name": "Page D", "uv": 2800, "pv": 4000, "amt": 2010 },
+        { "name": "Page E", "uv": 1900, "pv": 4900, "amt": 2190 },
+        { "name": "Page F", "uv": 2400, "pv": 3900, "amt": 2510 },
+        { "name": "Page G", "uv": 3500, "pv": 4400, "amt": 2110 }
+      ]
+    },
+    {
+      "name": "원/엔",
+      "imageUrl": "/image/japan_flag.png",
+      "currentPrice": 700,
+      "date": "2024.05.30",
+      "increase": 13.2,
+      "chartData": [
+        { "name": "Page A", "uv": 4200, "pv": 2600, "amt": 2600 },
+        { "name": "Page B", "uv": 3200, "pv": 1500, "amt": 2230 },
+        { "name": "Page C", "uv": 2200, "pv": 10000, "amt": 2310 },
+        { "name": "Page D", "uv": 2900, "pv": 4100, "amt": 2020 },
+        { "name": "Page E", "uv": 2000, "pv": 5000, "amt": 2200 },
+        { "name": "Page F", "uv": 2500, "pv": 4000, "amt": 2520 },
+        { "name": "Page G", "uv": 3600, "pv": 4500, "amt": 2120 }
+      ]
+    },
+    {
+      "name": "원/위안",
+      "imageUrl": "/image/china_flag.png",
+      "currentPrice": 200,
+      "date": "2024.06.02",
+      "increase": 13.2,
+      "chartData": [
+        { "name": "Page A", "uv": 4400, "pv": 2800, "amt": 2800 },
+        { "name": "Page B", "uv": 3400, "pv": 1700, "amt": 2250 },
+        { "name": "Page C", "uv": 2400, "pv": 10200, "amt": 2330 },
+        { "name": "Page D", "uv": 3100, "pv": 4300, "amt": 2040 },
+        { "name": "Page E", "uv": 2200, "pv": 5200, "amt": 2220 },
+        { "name": "Page F", "uv": 2700, "pv": 4200, "amt": 2540 },
+        { "name": "Page G", "uv": 3800, "pv": 4700, "amt": 2140 }
+      ]
+    }
+  ]
+}
