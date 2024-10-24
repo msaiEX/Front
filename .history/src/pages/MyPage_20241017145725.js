@@ -56,7 +56,6 @@ const MyPage = () => {
   const [eurSellTotal, setEurSellTotal] = useState(0);
   const [eurNetAmount, setEurNetAmount] = useState(0); // net EUR 변화량 저장
 
-
   const [consumData, setConsumData] = useState([]);
   const [todayData, setTodayData] = useState([]);
   const [filteredTodayData, setFilteredTodayData] = useState([]);
@@ -100,7 +99,7 @@ const MyPage = () => {
           }
           return acc;
         }, {});
-        
+
         setMaxPeriodData(maxPeriodPerState);
 
         setAccountsData(response.data.accounts);
@@ -259,7 +258,7 @@ const MyPage = () => {
       { metric: "최저가", value: 1500 },
     ],
   };
-  console.log("todayData", todayData)
+  console.log("todayData", todayData);
   // console.log("maxPeriodData", maxPeriodData.USD.remit_send)
   return (
     <div className="w-[1140px] h-[calc(100vh-60px)] flex flex-col py-10 px-10">
@@ -309,30 +308,33 @@ const MyPage = () => {
                   style={{ maxHeight: "450px", overflowY: "auto" }}
                 >
                   <Text className="text-xl font-bold">거래내역</Text>
-                  {filteredTransactions.slice().reverse().map((transaction, index) => {
-                    // 거래가 처리된 후 새로운 잔액 계산
-                    const newBalance = calculateNewBalance(
-                      transaction.transaction_type,
-                      transaction.withdrawal_amount,
-                      transaction.deposit_amount,
-                      currentBalance
-                    );
+                  {filteredTransactions
+                    .slice()
+                    .reverse()
+                    .map((transaction, index) => {
+                      // 거래가 처리된 후 새로운 잔액 계산
+                      const newBalance = calculateNewBalance(
+                        transaction.transaction_type,
+                        transaction.withdrawal_amount,
+                        transaction.deposit_amount,
+                        currentBalance
+                      );
 
-                    // 거래 이후의 잔액으로 currentBalance 업데이트
-                    currentBalance = newBalance;
+                      // 거래 이후의 잔액으로 currentBalance 업데이트
+                      currentBalance = newBalance;
 
-                    return (
-                      <TransactionAccount
-                        key={index}
-                        currency_code={transaction.currency_code}
-                        transaction_date={transaction.transaction_date}
-                        transaction_type={transaction.transaction_type}
-                        withdrawal_amount={transaction.withdrawal_amount}
-                        deposit_amount={transaction.deposit_amount}
-                        balance={newBalance} // 각 거래 후의 잔액 전달
-                      />
-                    );
-                  })}
+                      return (
+                        <TransactionAccount
+                          key={index}
+                          currency_code={transaction.currency_code}
+                          transaction_date={transaction.transaction_date}
+                          transaction_type={transaction.transaction_type}
+                          withdrawal_amount={transaction.withdrawal_amount}
+                          deposit_amount={transaction.deposit_amount}
+                          balance={newBalance} // 각 거래 후의 잔액 전달
+                        />
+                      );
+                    })}
                 </div>
               </TabPanel>
 
@@ -406,7 +408,7 @@ const MyPage = () => {
                           //   usdBuyTotal - usdSellTotal
                           // )}
                           convertedAmount={"6,760"}
-                          averageExchangeRate={1352.00}
+                          averageExchangeRate={1352.0}
                           currentSellAmount={6705}
                           expectedExchangeRate={1341.18}
                           // averageExchangeRate={
@@ -501,7 +503,7 @@ const MyPage = () => {
                         <CurrencyAsset
                           currencyCode="CNY"
                           imageSrc="/image/china_flag.png"
-                          // amount={formatNumber(accountsData[1].cny)} 
+                          // amount={formatNumber(accountsData[1].cny)}
                           // accountsData[1].cny 가 CNY 데이터를 담고 있다고 가정
                           amount={10}
                           exchangeAmount={formatNumber(cnyNetAmount)}
@@ -551,7 +553,9 @@ const MyPage = () => {
                       <SwiperSlide>
                         <CurrencyAsset
                           currencyCode="EUR"
-                          imageSrc={ process.env.PUBLIC_URL + "/image/eu_flag.png"} // EUR 국기 이미지 경로
+                          imageSrc={
+                            process.env.PUBLIC_URL + "/image/eu_flag.png"
+                          } // EUR 국기 이미지 경로
                           amount={formatNumber(accountsData[1].eur)} // accountsData[1].eur 가 EUR 데이터를 담고 있다고 가정
                           exchangeAmount={formatNumber(eurNetAmount)}
                           // convertedAmount={formatNumber(
@@ -615,13 +619,13 @@ const MyPage = () => {
                 </Text>
               </div>
               <ModalCloseButton />
-              <ModalBody className='flex justify-center'>
+              <ModalBody className="flex justify-center">
                 {/* <Tabs variant="soft-rounded" colorScheme="green">
                   <TabList>
                     <Tab>투자비중</Tab> */}
-                    {/* <Tab>수익현황</Tab>
+                {/* <Tab>수익현황</Tab>
                     <Tab>가격분석</Tab> */}
-                  {/* </TabList>
+                {/* </TabList>
                   <TabPanels>
                     <TabPanel
                       display="flex"
@@ -630,7 +634,7 @@ const MyPage = () => {
                     >
                       <Example accountsData={accountsData} />
                     </TabPanel> */}
-                    {/* <TabPanel name="graph2">
+                {/* <TabPanel name="graph2">
                       <ProfitLineChart />
                       <div className='px-5'>
                       <Text className='font-semibold mt-5'>
@@ -642,11 +646,11 @@ const MyPage = () => {
                       </div>
                     </TabPanel>
                     <TabPanel> */}
-                      {/* <VStack spacing={4}> */}
-                        {/* 통화 선택 버튼 */}
-                      
-                        {/* 차트 렌더링 */}
-                        {/* <PriceAnalysisChart
+                {/* <VStack spacing={4}> */}
+                {/* 통화 선택 버튼 */}
+
+                {/* 차트 렌더링 */}
+                {/* <PriceAnalysisChart
                           data={priceData[selectedCurrency]}
                         />
                         <HStack spacing={4}>
@@ -664,10 +668,10 @@ const MyPage = () => {
                         </HStack>
                       </VStack>
                     </TabPanel> */}
-                  {/* </TabPanels>
+                {/* </TabPanels>
   
                 </Tabs> */}
-                 <Example accountsData={accountsData} />
+                <Example accountsData={accountsData} />
               </ModalBody>
 
               <ModalFooter>

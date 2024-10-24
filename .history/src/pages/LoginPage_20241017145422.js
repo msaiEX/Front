@@ -2,12 +2,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { setUser } from "../redux/userSlice"; 
-import {
-  Text,
-  Divider
-} from "@chakra-ui/react";
-import { useDispatch } from 'react-redux';
+import { setUser } from "../redux/userSlice";
+import { Text, Divider } from "@chakra-ui/react";
+import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
 const LoginPage = () => {
@@ -28,14 +25,18 @@ const LoginPage = () => {
     event.preventDefault();
     try {
       // POST 요청 시 body에 데이터를 전달
-      const response = await axios.post("http://34.22.76.4:8082/api/login", {
-        id,        // 전송할 로그인 데이터
-        password,
-      }, {
-        headers: {
-          'Content-Type': 'application/json' // JSON 데이터임을 명시
+      const response = await axios.post(
+        "http://34.22.76.4:8082/api/login",
+        {
+          id, // 전송할 로그인 데이터
+          password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json", // JSON 데이터임을 명시
+          },
         }
-      });
+      );
 
       if (response.status === 200) {
         dispatch(setUser(response.data));
@@ -54,19 +55,24 @@ const LoginPage = () => {
   return (
     <div className="w-[960px] h-[calc(100vh-95px)] flex flex-col py-1 px-10 mt-10">
       <div className="bg-white drop-shadow-2xl rounded-3xl px-10 py-8 my-10 mx-60">
-        <Text className='font-semibold text-3xl mb-4'>로그인</Text>
-        <Text className='font-normal text-slate-600'>하나EX에 로그인 하고 더 많은 서비스를</Text>
-        <Text className='font-normal text-slate-600'>즐겨보세요!</Text>
+        <Text className="font-semibold text-3xl mb-4">로그인</Text>
+        <Text className="font-normal text-slate-600">
+          하나EX에 로그인 하고 더 많은 서비스를
+        </Text>
+        <Text className="font-normal text-slate-600">즐겨보세요!</Text>
         <form onSubmit={handleSubmit}>
-          <div className='mt-3'>
-            <label htmlFor="id" className="block text-sm font-medium text-gray-700">
+          <div className="mt-3">
+            <label
+              htmlFor="id"
+              className="block text-sm font-medium text-gray-700"
+            >
               ID
             </label>
             <input
               className={`w-full bg-green-100 rounded-md px-2 py-[12px] text-sm 
                 border border-transparent focus:bg-white focus:border-green-400 
                 transition-all duration-300`}
-              placeholder='아이디를 입력해 주세요'
+              placeholder="아이디를 입력해 주세요"
               type="text"
               id="id"
               value={id}
@@ -74,16 +80,19 @@ const LoginPage = () => {
               required
             />
           </div>
-          <div className='mt-3'>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+          <div className="mt-3">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-700"
+            >
               Password
             </label>
             <input
               className={`w-full bg-green-100 rounded-md px-2 py-[12px] text-sm 
                 border border-transparent focus:bg-white focus:border-green-400 
                 transition-all duration-300`}
-              placeholder='비밀번호를 입력해 주세요'
-              type="password"  // 비밀번호 타입 변경
+              placeholder="비밀번호를 입력해 주세요"
+              type="password" // 비밀번호 타입 변경
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -91,8 +100,8 @@ const LoginPage = () => {
             />
           </div>
           {errorMessage && <p>{errorMessage}</p>}
-          <Divider className='my-4' />
-          <div className='flex justify-around mr-1'>
+          <Divider className="my-4" />
+          <div className="flex justify-around mr-1">
             <button type="submit">가입하기</button>
             <button type="submit">로그인</button>
           </div>

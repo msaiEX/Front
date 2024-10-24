@@ -126,7 +126,7 @@ const NewsPageDetail = () => {
         </span>
       </div>
       {/* 요약box */}
-      <div name="gpt-box" className="bg-green-200 px-6 py-4 rounded-2xl mb-4">
+      <div name="gpt-box" className="bg-sky-200 px-6 py-4 rounded-2xl mb-4">
         {/* 요약 텍스트 (항상 보임) */}
         {!gpttext && <Text>{truncateText(consumData.news_summary, 100)}</Text>}
         {/* 애니메이션 적용 영역 */}
@@ -140,7 +140,7 @@ const NewsPageDetail = () => {
           {gpttext && (
             <>
               <Text>{consumData.news_summary}</Text>
-              <div className="bg-green-100 rounded-2xl px-6 py-4 my-4">
+              <div className="bg-green-50 rounded-2xl px-6 py-4 my-4">
                 <div className="flex items-end gap-1 py-3">
                   <Text className="font-semibold text-xl leading-0">
                     AI 분석 포인트
@@ -280,7 +280,7 @@ const NewsPageDetail = () => {
       {newsConsumData.length > 5 && (
         <div className="flex justify-center mt-4">
           <button
-            className="w-[120px] px-4 py-2 bg-green-600 rounded-full text-white rounded hover:bg-green-700 transition-colors duration-300"
+            className="w-[120px] px-4 py-2 bg-sky-500 rounded-full text-white hover:bg-sky-600 transition-colors duration-300"
             onClick={handleToggleNews}
           >
             {showFullNews ? "간략하게" : "뉴스 더보기"}

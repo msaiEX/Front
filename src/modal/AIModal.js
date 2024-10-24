@@ -10,7 +10,7 @@ import {
   TabPanel,
   Text,
   Image,
-  ModalCloseButton
+  ModalCloseButton,
 } from "@chakra-ui/react";
 import {
   Bar,
@@ -23,7 +23,7 @@ import {
   ComposedChart,
   AreaChart,
   CartesianGrid,
-  Area
+  Area,
 } from "recharts";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 const AiModal = ({ onClose, aiData }) => {
@@ -41,9 +41,9 @@ const AiModal = ({ onClose, aiData }) => {
       value: parseFloat(value.replace(/,/g, "")), // 쉼표 제거 후 숫자로 변환
     })
   );
-  
-  console.log(weekPredictData)
-  console.log("month : ", monthPredictData)
+
+  // console.log(weekPredictData)
+  // console.log("month : ", monthPredictData)
   // BarChart에 사용할 데이터 준비
   const data = [
     {
@@ -51,13 +51,13 @@ const AiModal = ({ onClose, aiData }) => {
       tomorrow: aiData.tomorrowPredict,
     },
   ];
-  
+
   return (
     <ModalContent width="80%" maxW="600px" maxH="520px">
-      <ModalHeader className='text-center'>하나 AI 리포트</ModalHeader>
-      <ModalCloseButton onClick={onClose}/>
-      <ModalBody className='overflow-y-auto'>
-        <Tabs variant="soft-rounded" colorScheme="green">
+      <ModalHeader className="text-center">Copilot 리포트</ModalHeader>
+      <ModalCloseButton onClick={onClose} />
+      <ModalBody className="overflow-y-auto">
+        <Tabs variant="soft-rounded" colorScheme="blue">
           <TabList>
             <Tab>내일</Tab>
             <Tab>주간</Tab>
@@ -66,7 +66,7 @@ const AiModal = ({ onClose, aiData }) => {
           <TabPanels>
             <TabPanel name="panel1" className="mt-5">
               <Text className="text-lg" style={{ lineHeight: "10px" }}>
-                하나AI는 내일
+                Copilot은 내일
               </Text>
               <div className="flex">
                 <Text
@@ -135,11 +135,11 @@ const AiModal = ({ onClose, aiData }) => {
                 </ResponsiveContainer>
               </div>
               {/* 설명란 */}
-              <div className="p-3 bg-green-100 rounded-xl mt-6">
+              <div className="p-3 bg-sky-100 rounded-xl mt-6">
                 <div className="flex gap-1 mx-3">
-                  <div className="bg-white border border-green-500 w-[42px] h-[42px] rounded-full flex justify-center items-center">
+                  <div className="bg-white border border-sky-500 w-[42px] h-[42px] rounded-full flex justify-center items-center">
                     <Image
-                      src="/image/hanabot.png"
+                      src={process.env.PUBLIC_URL + "/image/copilot.png"}
                       className="h-[32px] w-[32px]"
                     ></Image>
                   </div>
@@ -151,13 +151,13 @@ const AiModal = ({ onClose, aiData }) => {
                       className="text-sm font-bold text-slate-700"
                       style={{ lineHeight: "15px" }}
                     >
-                      하나AI
+                      Copilot
                     </Text>
                   </div>
                 </div>
                 <div className="border border-gray-200 m-3"></div>
                 <Text className="text-sm font-semibold text-slate-600 px-3 mb-3">
-                  하나 AI가 이렇게 분석한 이유를 설명해줄게요.
+                  Copilot이 이렇게 분석한 이유를 설명해줄게요.
                 </Text>
                 <Text className="text-sm text-slate-600 px-3">
                   {aiData.todayPredictReason}
@@ -178,7 +178,7 @@ const AiModal = ({ onClose, aiData }) => {
             {/* 주간 */}
             <TabPanel className="mt-5">
               <Text className="text-lg" style={{ lineHeight: "10px" }}>
-                하나AI는 일주일 후
+                Copilot은 일주일 후
               </Text>
               <div className="flex">
                 <Text
@@ -222,11 +222,11 @@ const AiModal = ({ onClose, aiData }) => {
                 </ResponsiveContainer>
               </div>
               {/* 설명란 */}
-              <div className="p-3 bg-green-100 rounded-xl mt-6">
+              <div className="p-3 bg-sky-100 rounded-xl mt-6">
                 <div className="flex gap-1 mx-3">
-                  <div className="bg-white border border-green-500 w-[42px] h-[42px] rounded-full flex justify-center items-center">
+                  <div className="bg-white border border-sky-100 w-[42px] h-[42px] rounded-full flex justify-center items-center">
                     <Image
-                      src="/image/hanabot.png"
+                      src={process.env.PUBLIC_URL + "/image/copilot.png"}
                       className="h-[32px] w-[32px]"
                     ></Image>
                   </div>
@@ -238,13 +238,13 @@ const AiModal = ({ onClose, aiData }) => {
                       className="text-sm font-bold text-slate-700"
                       style={{ lineHeight: "15px" }}
                     >
-                      하나AI
+                      Copilot
                     </Text>
                   </div>
                 </div>
                 <div className="border border-gray-200 m-3"></div>
                 <Text className="text-sm font-semibold text-slate-600 px-3 mb-3">
-                  하나 AI가 이렇게 분석한 이유를 설명해줄게요.
+                  Copilot이 이렇게 분석한 이유를 설명해줄게요.
                 </Text>
                 <Text className="text-sm text-slate-600 px-3">
                   {aiData.weekReason}
@@ -265,7 +265,7 @@ const AiModal = ({ onClose, aiData }) => {
             {/* 월간 */}
             <TabPanel className="mt-5">
               <Text className="text-lg" style={{ lineHeight: "10px" }}>
-                하나AI는 한달 후
+                Copilot은 한달 후
               </Text>
               <div className="flex">
                 <Text
@@ -309,11 +309,11 @@ const AiModal = ({ onClose, aiData }) => {
                 </ResponsiveContainer>
               </div>
               {/* 설명란 */}
-              <div className="p-3 bg-green-100 rounded-xl mt-6">
+              <div className="p-3 bg-sky-100 rounded-xl mt-6">
                 <div className="flex gap-1 mx-3">
-                  <div className="bg-white border border-green-500 w-[42px] h-[42px] rounded-full flex justify-center items-center">
+                  <div className="bg-white border border-sky-100 w-[42px] h-[42px] rounded-full flex justify-center items-center">
                     <Image
-                      src="/image/hanabot.png"
+                      src={process.env.PUBLIC_URL + "/image/copilot.png"}
                       className="h-[32px] w-[32px]"
                     ></Image>
                   </div>
@@ -325,13 +325,13 @@ const AiModal = ({ onClose, aiData }) => {
                       className="text-sm font-bold text-slate-700"
                       style={{ lineHeight: "15px" }}
                     >
-                      하나AI
+                      Copilot
                     </Text>
                   </div>
                 </div>
                 <div className="border border-gray-200 m-3"></div>
                 <Text className="text-sm font-semibold text-slate-600 px-3 mb-3">
-                  하나 AI가 이렇게 분석한 이유를 설명해줄게요.
+                  Copilot이 이렇게 분석한 이유를 설명해줄게요.
                 </Text>
                 <Text className="text-sm text-slate-600 px-3">
                   {aiData.finalAnalysis}

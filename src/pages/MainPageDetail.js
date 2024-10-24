@@ -123,7 +123,7 @@ const MainPageDetail = () => {
     const getUseHistory = async () => {
       try {
         const result = await axios.get(
-          `http://localhost:8081/api/mainpage/detail?state=${id}`
+          `http://34.22.76.4:8081/api/mainpage/detail?state=${id}`
         );
 
         console.log("result data : ", result.data);
@@ -168,9 +168,7 @@ const MainPageDetail = () => {
           );
           setOriginSellPrice(remit_receive);
 
-          setWonValue(
-            parseFloat((remit_send - remit_send * rate).toFixed(2))
-          );
+          setWonValue(parseFloat((remit_send - remit_send * rate).toFixed(2)));
           setVendWonValue(
             parseFloat((remit_receive + remit_receive * rate).toFixed(2))
           );
@@ -201,7 +199,7 @@ const MainPageDetail = () => {
   const handleAIModalOpen = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:8081/api/predict");
+      const response = await axios.get("http://34.22.76.4:8081/api/predict");
       setAiData(response.data[1]);
       setModalType("AIModal");
     } catch (error) {
@@ -239,9 +237,7 @@ const MainPageDetail = () => {
     // 값 비교를 위해 소수점 두 자리까지 고정
     const roundedWonValue = parseFloat(wonValue.toFixed(2));
     const roundedVendWonValue = parseFloat(vendWonValue.toFixed(2));
-    const roundedCurrentInvestPrice = parseFloat(
-      currentInvestPrice.toFixed(2)
-    );
+    const roundedCurrentInvestPrice = parseFloat(currentInvestPrice.toFixed(2));
     const roundedCurrentSellPrice = parseFloat(currentSellPrice.toFixed(2));
 
     console.log(
@@ -346,9 +342,7 @@ const MainPageDetail = () => {
     }
 
     const roundedWonValue = parseFloat(wonValue.toFixed(2));
-    const roundedCurrentInvestPrice = parseFloat(
-      currentInvestPrice.toFixed(2)
-    );
+    const roundedCurrentInvestPrice = parseFloat(currentInvestPrice.toFixed(2));
     const roundedVendWonValue = parseFloat(vendWonValue.toFixed(2));
     const roundedCurrentSellPrice = parseFloat(currentSellPrice.toFixed(2));
 
@@ -514,7 +508,8 @@ const MainPageDetail = () => {
           <div className="flex justify-end w-full px-16 mt-2 gap-2">
             <div className="flex gap-1">
               <Text className="text-slate-500">
-                고시회차 {todayData[todayData.length - 1]?.period || "정보 없음"}
+                고시회차{" "}
+                {todayData[todayData.length - 1]?.period || "정보 없음"}
               </Text>
             </div>
             <div className="flex items-center gap-1">
@@ -562,7 +557,7 @@ const MainPageDetail = () => {
         >
           <button
             onClick={onOpen}
-            className="text-white bt-background px-4 py-2 rounded hover:bg-white hover:border hover:border-[#009577] hover:text-[#009577] transition-all"
+            className="text-white bg-sky-500 px-4 py-2 rounded hover:bg-white hover:border hover:border-sky-500 hover:text-sky-500 transition-all"
             style={{ height: "42px", width: "200px" }}
           >
             거래하기
@@ -573,7 +568,7 @@ const MainPageDetail = () => {
             onClick={handleAIModalOpen}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="text-white bt-background px-3 rounded-full hover:border hover:border-[#009577] hover:bg-white transition-all"
+            className="text-white bg-sky-500 px-3 rounded-full hover:border hover:border-sky-500 hover:bg-white transition-all"
             style={{ height: "42px", width: "42px" }}
           >
             <Image
@@ -609,12 +604,13 @@ const MainPageDetail = () => {
             style={{ top: isFixed ? "10px" : "auto" }}
           >
             <div className="flex items-center mb-3">
-              <Text className="mr-1 font-semibold">
-                {changeState}/KRW
-              </Text>
+              <Text className="mr-1 font-semibold">{changeState}/KRW</Text>
               <Image
                 boxSize={"20px"}
-                src={process.env.PUBLIC_URL + `/image/${changeState.toLowerCase()}_flag.png`}
+                src={
+                  process.env.PUBLIC_URL +
+                  `/image/${changeState.toLowerCase()}_flag.png`
+                }
               ></Image>
             </div>
             <div>
@@ -827,10 +823,7 @@ const MainPageDetail = () => {
             />
           )}
           {modalType === "AIModal" && (
-            <AiModal
-              onClose={handleClose}
-              aiData={aiData}
-            />
+            <AiModal onClose={handleClose} aiData={aiData} />
           )}
         </Modal>
       </div>

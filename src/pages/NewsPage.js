@@ -128,7 +128,7 @@ const NewsPage = () => {
           </Text>
           <Image
             className="h-[32px] w-[32px]"
-            src={process.env.PUBLIC_URL +"./image/news2_imoji.png"}
+            src={process.env.PUBLIC_URL + "./image/news2_imoji.png"}
           ></Image>
         </div>
         <Text fontSize="xl">
@@ -166,7 +166,7 @@ const NewsPage = () => {
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "scale(0.95)";
-                    e.currentTarget.style.border = "1px solid #32CD32";
+                    e.currentTarget.style.border = "1px solid #0ea5e9";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = "scale(1)";
@@ -217,7 +217,7 @@ const NewsPage = () => {
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "scale(0.95)";
-                    e.currentTarget.style.border = "1px solid #32CD32";
+                    e.currentTarget.style.border = "1px solid #0ea5e9";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = "scale(1)";
@@ -246,7 +246,7 @@ const NewsPage = () => {
           <Popover placement="top">
             <PopoverTrigger>
               <Image
-                className="p-1 bg-green-200 rounded-full w-[42px] h-[42px] mt-3 cursor-pointer"
+                className="p-1 bg-blue-200 rounded-full w-[42px] h-[42px] mt-3 cursor-pointer"
                 src={countryMapperFunction(selectedCurrency).image}
                 alt={`${selectedCurrency} Flag`}
               />

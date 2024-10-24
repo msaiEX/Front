@@ -28,14 +28,14 @@ const ChartCard = ({
   const handleHeart = () => {
     setHeart(!heart);
   };
-  const updatedChartData = chartData.map(data => ({
+  const updatedChartData = chartData.map((data) => ({
     ...data,
-    매매기준율: parseFloat(data.uv).toFixed(2)  // "uv" 값을 "매매기준율"로 변경
+    매매기준율: parseFloat(data.uv).toFixed(2), // "uv" 값을 "매매기준율"로 변경
   }));
   return (
     <div
       name="card-container"
-      className="w-[250px] h-[330px] px-8 py-4 bg-slate-50 rounded-2xl hover:transform hover:scale-95 hover:border hover:border-green-300 transition-all duration-300 ease-in-out"
+      className="w-[250px] h-[330px] px-8 py-4 bg-slate-50 rounded-2xl hover:transform hover:scale-95 hover:border hover:border-sky-400 transition-all duration-300 ease-in-out"
       style={{
         boxShadow: "0 2px 5px rgba(0, 0, 0, 0.2)",
         animation: "fadeIn 0.5s ease-in-out",

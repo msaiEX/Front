@@ -25,7 +25,7 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-  Box
+  Box,
 } from "@chakra-ui/react";
 import { FaRegSmile } from "react-icons/fa";
 import { FaRegSadTear } from "react-icons/fa";
@@ -139,7 +139,7 @@ const SemanticPageDetail = () => {
               bgColor={consumData.semantic === "긍정" ? "red" : "blue"}
               className="pt-3"
             />
-            
+
             <div className="flex justify-between">
               <div className="flex items-end">
                 <Text className="text-xl leading-0 text-red-500">긍정</Text>
@@ -153,28 +153,26 @@ const SemanticPageDetail = () => {
                 </Text>
                 <Text className="text-xl leading-0 text-blue-500">부정</Text>
               </div>
-              
             </div>
-            
           </div>
-          <div className='flex items-end ml-2'>
+          <div className="flex items-end ml-2">
             <button
-                onClick={onOpen}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                className="text-white bt-background px-3 rounded-full hover:border hover:border-[#009577] hover:bg-white transition-all"
-                style={{ height: "42px", width: "42px" }}
-              >
-                <Image
-                  src={
-                    isHovered
-                      ? "/image/ai_icon_reverse.png"
-                      : "/image/ai_icon2.png"
-                  }
-                  boxSize="20px"
-                  objectFit="cover"
-                />
-              </button>
+              onClick={onOpen}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              className="text-white bg-sky-500 px-3 rounded-full hover:border hover:border-sky-500 hover:bg-white transition-all"
+              style={{ height: "42px", width: "42px" }}
+            >
+              <Image
+                src={
+                  isHovered
+                    ? "/image/ai_icon_reverse.png"
+                    : "/image/ai_icon2.png"
+                }
+                boxSize="20px"
+                objectFit="cover"
+              />
+            </button>
           </div>
         </div>
 
@@ -256,7 +254,7 @@ const SemanticPageDetail = () => {
         {newsConsumData.length > 5 && (
           <div className="flex justify-center mt-4">
             <button
-              className="w-[120px] px-4 py-2 bg-green-600 rounded-full text-white rounded hover:bg-green-700 transition-colors duration-300"
+              className="w-[120px] px-4 py-2 bg-sky-500 rounded-full text-white hover:bg-sky-600 transition-colors duration-300"
               onClick={handleToggleNews}
             >
               {showFullNews ? "간략하게" : "뉴스 더보기"}
@@ -267,7 +265,7 @@ const SemanticPageDetail = () => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent width="80%" maxW="600px" maxH="500px">
-          <ModalHeader className="text-center">하나AI 감성분석</ModalHeader>
+          <ModalHeader className="text-center">Copilot 감성분석</ModalHeader>
           <ModalCloseButton />
           <ModalBody className="overflow-y-auto">
             <Text className="font-bold text-xl mb-2">분석결과</Text>
@@ -292,7 +290,7 @@ const SemanticPageDetail = () => {
             <Accordion>
               <AccordionItem>
                 <h2>
-                  <AccordionButton _expanded={{ bg: 'tomato', color: 'white' }}>
+                  <AccordionButton _expanded={{ bg: "tomato", color: "white" }}>
                     <Box as="span" flex="1" textAlign="left">
                       긍정요인
                     </Box>
@@ -300,13 +298,18 @@ const SemanticPageDetail = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  안전자산 수요 증가, 미국 경제의 안정적 성장세, 달러 강세에 따른 수익 기대 등이 긍정적 요인입니다. 미국의 금리 동결 또는 인하 기대감, 에너지 수출 증가 및 무역적자 감소도 긍정적 신호로 평가됩니다.
+                  안전자산 수요 증가, 미국 경제의 안정적 성장세, 달러 강세에
+                  따른 수익 기대 등이 긍정적 요인입니다. 미국의 금리 동결 또는
+                  인하 기대감, 에너지 수출 증가 및 무역적자 감소도 긍정적 신호로
+                  평가됩니다.
                 </AccordionPanel>
               </AccordionItem>
 
               <AccordionItem>
                 <h2>
-                  <AccordionButton _expanded={{ bg: '#4299e1', color: 'white' }}>
+                  <AccordionButton
+                    _expanded={{ bg: "#4299e1", color: "white" }}
+                  >
                     <Box as="span" flex="1" textAlign="left">
                       부정요인
                     </Box>
@@ -314,18 +317,21 @@ const SemanticPageDetail = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                고금리 지속, 미국 경제의 침체 우려, 글로벌 지정학적 리스크 증가가 부정적인 영향을 줍니다. 금리 인상 지속 가능성과 달러 가치에 대한 경기 침체 신호 등도 부정적 요인으로 작용하고 있습니다.
+                  고금리 지속, 미국 경제의 침체 우려, 글로벌 지정학적 리스크
+                  증가가 부정적인 영향을 줍니다. 금리 인상 지속 가능성과 달러
+                  가치에 대한 경기 침체 신호 등도 부정적 요인으로 작용하고
+                  있습니다.
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>
             <Text className="font-bold text-xl mt-4 mb-2">
               이유 및 상세 분석
             </Text>
-            <div className="p-3 bg-green-100 rounded-xl mt-6">
+            <div className="p-3 bg-sky-100 rounded-xl mt-6">
               <div className="flex gap-1 mx-3">
-                <div className="bg-white border border-green-500 w-[42px] h-[42px] rounded-full flex justify-center items-center">
+                <div className="bg-white border border-sky-500 w-[42px] h-[42px] rounded-full flex justify-center items-center">
                   <Image
-                    src="/image/hanabot.png"
+                    src={process.env.PUBLIC_URL + "/image/copilot.png"}
                     className="h-[32px] w-[32px]"
                   ></Image>
                 </div>
@@ -337,13 +343,13 @@ const SemanticPageDetail = () => {
                     className="text-sm font-bold text-slate-700"
                     style={{ lineHeight: "15px" }}
                   >
-                    하나AI
+                    Copilot
                   </Text>
                 </div>
               </div>
               <div className="border border-gray-200 m-3"></div>
               <Text className="text-sm font-semibold text-slate-600 px-3 mb-3">
-                하나 AI가 이렇게 분석한 이유를 설명해줄게요.
+                Copilot이 이렇게 분석한 이유를 설명해줄게요.
               </Text>
 
               <Text className="font-bold text-slate-600 px-3 mb-1">

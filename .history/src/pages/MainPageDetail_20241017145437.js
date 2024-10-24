@@ -168,9 +168,7 @@ const MainPageDetail = () => {
           );
           setOriginSellPrice(remit_receive);
 
-          setWonValue(
-            parseFloat((remit_send - remit_send * rate).toFixed(2))
-          );
+          setWonValue(parseFloat((remit_send - remit_send * rate).toFixed(2)));
           setVendWonValue(
             parseFloat((remit_receive + remit_receive * rate).toFixed(2))
           );
@@ -239,9 +237,7 @@ const MainPageDetail = () => {
     // 값 비교를 위해 소수점 두 자리까지 고정
     const roundedWonValue = parseFloat(wonValue.toFixed(2));
     const roundedVendWonValue = parseFloat(vendWonValue.toFixed(2));
-    const roundedCurrentInvestPrice = parseFloat(
-      currentInvestPrice.toFixed(2)
-    );
+    const roundedCurrentInvestPrice = parseFloat(currentInvestPrice.toFixed(2));
     const roundedCurrentSellPrice = parseFloat(currentSellPrice.toFixed(2));
 
     console.log(
@@ -346,9 +342,7 @@ const MainPageDetail = () => {
     }
 
     const roundedWonValue = parseFloat(wonValue.toFixed(2));
-    const roundedCurrentInvestPrice = parseFloat(
-      currentInvestPrice.toFixed(2)
-    );
+    const roundedCurrentInvestPrice = parseFloat(currentInvestPrice.toFixed(2));
     const roundedVendWonValue = parseFloat(vendWonValue.toFixed(2));
     const roundedCurrentSellPrice = parseFloat(currentSellPrice.toFixed(2));
 
@@ -514,7 +508,8 @@ const MainPageDetail = () => {
           <div className="flex justify-end w-full px-16 mt-2 gap-2">
             <div className="flex gap-1">
               <Text className="text-slate-500">
-                고시회차 {todayData[todayData.length - 1]?.period || "정보 없음"}
+                고시회차{" "}
+                {todayData[todayData.length - 1]?.period || "정보 없음"}
               </Text>
             </div>
             <div className="flex items-center gap-1">
@@ -578,9 +573,7 @@ const MainPageDetail = () => {
           >
             <Image
               src={
-                isHovered
-                  ? "/image/ai_icon_reverse.png"
-                  : "/image/ai_icon2.png"
+                isHovered ? "/image/ai_icon_reverse.png" : "/image/ai_icon2.png"
               }
               boxSize="20px"
               objectFit="cover"
@@ -609,9 +602,7 @@ const MainPageDetail = () => {
             style={{ top: isFixed ? "10px" : "auto" }}
           >
             <div className="flex items-center mb-3">
-              <Text className="mr-1 font-semibold">
-                {changeState}/KRW
-              </Text>
+              <Text className="mr-1 font-semibold">{changeState}/KRW</Text>
               <Image
                 boxSize={"20px"}
                 src={`/image/${changeState.toLowerCase()}_flag.png`}
@@ -827,10 +818,7 @@ const MainPageDetail = () => {
             />
           )}
           {modalType === "AIModal" && (
-            <AiModal
-              onClose={handleClose}
-              aiData={aiData}
-            />
+            <AiModal onClose={handleClose} aiData={aiData} />
           )}
         </Modal>
       </div>

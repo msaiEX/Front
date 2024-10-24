@@ -128,7 +128,7 @@ const NewsPage = () => {
           </Text>
           <Image
             className="h-[32px] w-[32px]"
-            src={process.env.PUBLIC_URL +"./image/news2_imoji.png"}
+            src={process.env.PUBLIC_URL + "./image/news2_imoji.png"}
           ></Image>
         </div>
         <Text fontSize="xl">

@@ -246,28 +246,32 @@ const NewsPageDetail = () => {
 
       {/* 뉴스 목록 */}
       {currentNewsType === "KOREA"
-        ? filteredKoreaNews.slice(0, visibleNewsCount).map((data, index) => (
-            <NewsBar
-              key={index}
-              state={data.state}
-              result={data.result}
-              url={data.url}
-              title={data.title}
-              content={data.content}
-              imageUrl={data.imageUrl}
-            />
-          ))
-        : filteredLocalNews.slice(0, visibleNewsCount).map((data, index) => (
-            <NewsBar
-              key={index}
-              state={data.state}
-              result={data.result}
-              url={data.url}
-              title={data.title}
-              content={data.content}
-              imageUrl={data.imageUrl}
-            />
-          ))}
+        ? filteredKoreaNews
+            .slice(0, visibleNewsCount)
+            .map((data, index) => (
+              <NewsBar
+                key={index}
+                state={data.state}
+                result={data.result}
+                url={data.url}
+                title={data.title}
+                content={data.content}
+                imageUrl={data.imageUrl}
+              />
+            ))
+        : filteredLocalNews
+            .slice(0, visibleNewsCount)
+            .map((data, index) => (
+              <NewsBar
+                key={index}
+                state={data.state}
+                result={data.result}
+                url={data.url}
+                title={data.title}
+                content={data.content}
+                imageUrl={data.imageUrl}
+              />
+            ))}
 
       {/* 뉴스 더보기/간략하게 버튼 */}
       {newsConsumData.length > 5 && (

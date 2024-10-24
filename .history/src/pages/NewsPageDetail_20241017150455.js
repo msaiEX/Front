@@ -111,7 +111,10 @@ const NewsPageDetail = () => {
       <div className="mb-4">
         <div className="flex">
           <p className="font-semibold text-xl">ChatGPT</p>
-          <Image boxSize={"24px"} src={process.env.PUBLIC_URL +"/image/chat-bot.png"}></Image>
+          <Image
+            boxSize={"24px"}
+            src={process.env.PUBLIC_URL + "/image/chat-bot.png"}
+          ></Image>
         </div>
 
         <span>
@@ -246,28 +249,32 @@ const NewsPageDetail = () => {
 
       {/* 뉴스 목록 */}
       {currentNewsType === "KOREA"
-        ? filteredKoreaNews.slice(0, visibleNewsCount).map((data, index) => (
-            <NewsBar
-              key={index}
-              state={data.state}
-              result={data.result}
-              url={data.url}
-              title={data.title}
-              content={data.content}
-              imageUrl={data.imageUrl}
-            />
-          ))
-        : filteredLocalNews.slice(0, visibleNewsCount).map((data, index) => (
-            <NewsBar
-              key={index}
-              state={data.state}
-              result={data.result}
-              url={data.url}
-              title={data.title}
-              content={data.content}
-              imageUrl={data.imageUrl}
-            />
-          ))}
+        ? filteredKoreaNews
+            .slice(0, visibleNewsCount)
+            .map((data, index) => (
+              <NewsBar
+                key={index}
+                state={data.state}
+                result={data.result}
+                url={data.url}
+                title={data.title}
+                content={data.content}
+                imageUrl={data.imageUrl}
+              />
+            ))
+        : filteredLocalNews
+            .slice(0, visibleNewsCount)
+            .map((data, index) => (
+              <NewsBar
+                key={index}
+                state={data.state}
+                result={data.result}
+                url={data.url}
+                title={data.title}
+                content={data.content}
+                imageUrl={data.imageUrl}
+              />
+            ))}
 
       {/* 뉴스 더보기/간략하게 버튼 */}
       {newsConsumData.length > 5 && (

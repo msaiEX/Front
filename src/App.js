@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
 import MainPage from "./pages/MainPage";
 import LoginPage from "./pages/LoginPage";
@@ -14,13 +14,14 @@ import BoardPageDetail from "./pages/BoardPageDetail";
 
 import "./css/style.css";
 import UserProfile from "./pages/UserProfile";
-import HomePage from './pages/HomePage';
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
     <ChakraProvider>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Navigate to="/Main" />} />
           <Route path="/" element={<AppOut />}>
             <Route path="Main" element={<MainPage />} />
             <Route path="Login" element={<LoginPage />} />

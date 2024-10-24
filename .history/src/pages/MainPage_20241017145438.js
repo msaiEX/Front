@@ -10,16 +10,18 @@ import {
   setSelectedCurrencies,
   addSelectedCurrency,
   removeSelectedCurrency,
-} from '../redux/userSlice'; // 액션 임포트
+} from "../redux/userSlice"; // 액션 임포트
 
 const MainPage = () => {
   const [consumData, setConsumData] = useState([]);
   const [worldConsumData, setWorldConsumData] = useState([]);
-  
+
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
-  const selectedCurrencies = useSelector((state) => state.user.selectedCurrencies);
-  
+  const selectedCurrencies = useSelector(
+    (state) => state.user.selectedCurrencies
+  );
+
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
@@ -41,8 +43,8 @@ const MainPage = () => {
   // 날짜를 얻는 함수
   const getFormattedDate = (date) => {
     const year = date.getFullYear();
-    const month = ('0' + (date.getMonth() + 1)).slice(-2); // 월은 0부터 시작하므로 +1
-    const day = ('0' + date.getDate()).slice(-2);
+    const month = ("0" + (date.getMonth() + 1)).slice(-2); // 월은 0부터 시작하므로 +1
+    const day = ("0" + date.getDate()).slice(-2);
     return `${year}-${month}-${day}`;
   };
 
@@ -75,8 +77,13 @@ const MainPage = () => {
 
     if (todayDataEntry && yesterdayDataEntry) {
       const todayRate = parseFloat(todayDataEntry.baseRate.replace(/,/g, ""));
-      const yesterdayRate = parseFloat(yesterdayDataEntry.baseRate.replace(/,/g, ""));
-      const rateChange = (((todayRate - yesterdayRate) / yesterdayRate) * 100).toFixed(2);
+      const yesterdayRate = parseFloat(
+        yesterdayDataEntry.baseRate.replace(/,/g, "")
+      );
+      const rateChange = (
+        ((todayRate - yesterdayRate) / yesterdayRate) *
+        100
+      ).toFixed(2);
       return rateChange;
     }
     return null;
