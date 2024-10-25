@@ -200,7 +200,7 @@ const MainPageDetail = () => {
     setLoading(true);
     try {
       const response = await axios.get("http://34.22.76.4:8081/api/predict");
-      setAiData(response.data[1]);
+      setAiData(response.data[response.data.length - 1]);
       setModalType("AIModal");
     } catch (error) {
       console.error("데이터 가져오기 오류:", error);

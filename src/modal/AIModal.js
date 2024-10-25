@@ -26,6 +26,7 @@ import {
   Area,
 } from "recharts";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
+
 const AiModal = ({ onClose, aiData }) => {
   // 데이터를 파싱하여 JSON 객체로 변환
   const weekPredictData = Object.entries(JSON.parse(aiData.weekPredict)).map(
