@@ -105,7 +105,7 @@ const NewsPageDetail = () => {
       <div className="mb-4">
         <Heading size={"lg"}>{consumData.title}</Heading>
         <Text size={"sm"} className="text-slate-700">
-          2024년 8월 12일 07:58
+          2024년 10월 28일 07:58
         </Text>
       </div>
       <div className="mb-4">

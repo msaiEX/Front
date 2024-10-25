@@ -87,7 +87,7 @@ const AiModal = ({ onClose, aiData }) => {
               </div>
               <div className="flex">
                 <Text className="text-sm text-slate-500">
-                  24.09.26 예상변동폭
+                  24.10.28 예상변동폭
                 </Text>
                 <Text className="text-sm font-bold text-slate-500">
                   {aiData.tomorrowFluctuationRange}
@@ -199,7 +199,7 @@ const AiModal = ({ onClose, aiData }) => {
               </div>
               <div className="flex">
                 <Text className="text-sm text-slate-500">
-                  24.09.26 예상변동폭
+                  24.10.28 예상변동폭
                 </Text>
                 <Text className="text-sm font-bold text-slate-500">
                   {aiData.tomorrowFluctuationRange}{" "}
@@ -286,7 +286,7 @@ const AiModal = ({ onClose, aiData }) => {
               </div>
               <div className="flex">
                 <Text className="text-sm text-slate-500">
-                  24.09.26 예상변동폭
+                  24.10.28 예상변동폭
                 </Text>
                 <Text className="text-sm font-bold text-slate-500">
                   {aiData.tomorrowFluctuationRange}{" "}
