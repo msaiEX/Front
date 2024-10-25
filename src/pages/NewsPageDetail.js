@@ -140,7 +140,7 @@ const NewsPageDetail = () => {
           {gpttext && (
             <>
               <Text>{consumData.news_summary}</Text>
-              <div className="bg-green-50 rounded-2xl px-6 py-4 my-4">
+              <div className="bg-sky-100 rounded-2xl px-6 py-4 my-4">
                 <div className="flex items-end gap-1 py-3">
                   <Text className="font-semibold text-xl leading-0">
                     AI 분석 포인트
@@ -229,7 +229,7 @@ const NewsPageDetail = () => {
         ></div>
 
         <button
-          className={`z-10 px-4 py-2 ${
+          className={`z-10 px-3 py-2 ${
             currentNewsType === "KOREA" ? "text-blue-700" : "text-slate-700"
           } rounded transition-colors duration-300 ease-in-out`}
           onClick={() => setCurrentNewsType("KOREA")}
@@ -238,7 +238,7 @@ const NewsPageDetail = () => {
         </button>
 
         <button
-          className={`z-10 px-4 py-2 ${
+          className={`z-10 px-3 py-2 ${
             currentNewsType === "LOCAL" ? "text-blue-700" : "text-slate-700"
           } rounded transition-colors duration-300 ease-in-out`}
           onClick={() => setCurrentNewsType("LOCAL")}

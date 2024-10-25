@@ -98,7 +98,7 @@ const SemanticPage = () => {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "scale(0.95)";
-                e.currentTarget.style.border = "1px solid #32CD32";
+                e.currentTarget.style.border = "1px solid #0ea5e9";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "scale(1)";
